@@ -23,11 +23,11 @@ def parse_options():
     parser.add_option("-i", "--interface", dest="interface", help="Interface to change it's MAC address")
     parser.add_option("-m", "--mac", dest="new_mac", help="New MAC address")
 
-    (options, argument) = parser.parse_args()
-    change_mac(options.interface, options.new_mac)
+    return parser.parse_args()
     
 
 print_config()
-parse_options()
+(options, argument) = parse_options()
+change_mac(options.interface, options.new_mac)
 clear_screen()
 print_config()
