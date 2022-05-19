@@ -3,8 +3,9 @@
 import scapy.all as scapy
 
 def scan(ip):
-    scapy.ARP(ip)
+    result = scapy.ARP(ip)
+    print(result)
 
 
-scan("")
+scan("10.0.2.2")
 
