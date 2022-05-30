@@ -27,7 +27,7 @@ def get_mac(ip):
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("-t", "--target", dest="target", help="Target IP")
-    parser.add_argument("-s", "--spoof", dest="spoof", help="Spoof IO")
+    parser.add_argument("-s", "--spoof", dest="spoof", help="Spoof IP")
     options = parser.parse_args()
     return options
 
