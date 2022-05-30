@@ -3,6 +3,7 @@
 # run with sudo -E python3 ... | the -E switch preserves the enviroment
 
 import scapy.all as scapy
+import argparse
 
 DEST_MAC = "ff:ff:ff:ff:ff:ff"
 IP = "IP"
@@ -27,6 +28,13 @@ def scan(ip):
 
     return result
 
-ip_mac_map = scan("10.0.2.1/24")
+def get_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-t", "--target", dest="target", help="Target IP / IP range")
+    options = parser.parse_args()
+    return options
+
+options = get_args()
+ip_mac_map = scan(options.target)
 print_table(ip_mac_map)
 
